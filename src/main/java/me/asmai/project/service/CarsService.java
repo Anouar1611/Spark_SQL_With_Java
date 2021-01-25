@@ -27,9 +27,10 @@ public class CarsService {
         cars.show((int) getDataset().count());
     }
 
-    public void getCarsByModelAndOriginAndSortedByHorsePower(double model, String origin){
+    public void getCarsByBetweenTwoModelsOfAnOriginAndSortedByHorsePower(double model1, double model2, String origin){
         Dataset<Cars> cars = getDataset().filter((FilterFunction<Cars>) car -> car.getOrigin().equals(origin))
-        .filter("Model == \"" + model + "\"")
+        .filter("Model >= \"" + model1 + "\"")
+        .filter("Model <= \"" + model2 + "\"")
         .sort("Horsepower");
         cars.show((int) getDataset().count());
     }

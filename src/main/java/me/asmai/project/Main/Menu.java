@@ -14,7 +14,9 @@ public class Menu {
 
         try {
             int menuOption = 0;
+            double model1;
             double model;
+            double model2;
             String origin;
 
             do {
@@ -42,11 +44,14 @@ public class Menu {
                     case 5:
                         System.out.println("Enter the model of the car : Ex: 80");
                         scanner.nextLine();
-                        model = scanner.nextInt();
+                        model1 = scanner.nextInt();
+                        System.out.println("Enter the second model of the car : Ex: 81");
+                        scanner.nextLine();
+                        model2 = scanner.nextInt();
                         System.out.println("Enter the origin of the car : Ex: US");
                         scanner.nextLine();
                         origin = scanner.nextLine();
-                        carsService.getCarsByModelAndOriginAndSortedByHorsePower(model,origin);
+                        carsService.getCarsByBetweenTwoModelsOfAnOriginAndSortedByHorsePower(model1,model2,origin);
                         break;
                     case 6:
                         System.out.println("Enter the origin of the car : Ex: Japan");
@@ -80,7 +85,7 @@ public class Menu {
         System.out.println("2. Get Cars By Model");
         System.out.println("3. Get Model of Cars By Less HorsePower");
         System.out.println("4. Get Cars Sorted by Model and HorsePower");
-        System.out.println("5. Get Cars by Model and Origin and Sorted by HorsePower");
+        System.out.println("5. Get Cars By Origin and Between Two Models and Sorted by HorsePower");
         System.out.println("6. Get Cars by Origin and Sorted by Model");
         System.out.println("7. Quit Program");
 
