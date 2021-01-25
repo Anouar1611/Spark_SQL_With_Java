@@ -22,7 +22,7 @@ public class CarsService {
     }
 
     public void getCarsSortedByModelAndHorsePower(){
-        Dataset<Cars> cars = getDataset().sort("me/asmai/project/Model","Horsepower"); // Or create a Comparator
+        Dataset<Cars> cars = getDataset().sort("Model","Horsepower"); // Or create a Comparator
         cars.show((int) getDataset().count());
     }
 
@@ -35,7 +35,7 @@ public class CarsService {
 
     public void getCarsByOriginAndSortedByModel(String origin){
         Dataset<Cars> cars = getDataset().filter((FilterFunction<Cars>) car -> car.getOrigin().equals(origin))
-        .sort("me/asmai/project/Model");
+        .sort("Model");
         cars.show((int) getDataset().count());
     }
 
