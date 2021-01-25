@@ -16,6 +16,7 @@ public class CarsService {
         cars.show((int) getDataset().count());
     }
 
+
     public void getModelOfCarsByLessHorsePower() {
         Dataset<Row> cars = sparkSession().sql("SELECT Model,MIN(Horsepower) FROM cars GROUP BY Model");
         cars.show((int) getDataset().count());
