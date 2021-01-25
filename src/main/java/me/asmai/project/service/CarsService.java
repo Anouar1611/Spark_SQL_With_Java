@@ -1,9 +1,9 @@
-package service;
-import Model.Cars;
+package me.asmai.project.service;
+import me.asmai.project.Model.Cars;
 import org.apache.spark.api.java.function.FilterFunction;
 import org.apache.spark.sql.Dataset;
 import org.apache.spark.sql.*;
-import static repository.EntryPoint.*;
+import static me.asmai.project.repository.EntryPoint.*;
 
 public class CarsService {
 
@@ -22,7 +22,7 @@ public class CarsService {
     }
 
     public void getCarsSortedByModelAndHorsePower(){
-        Dataset<Cars> cars = getDataset().sort("Model","Horsepower"); // Or create a Comparator
+        Dataset<Cars> cars = getDataset().sort("me/asmai/project/Model","Horsepower"); // Or create a Comparator
         cars.show((int) getDataset().count());
     }
 
@@ -35,7 +35,7 @@ public class CarsService {
 
     public void getCarsByOriginAndSortedByModel(String origin){
         Dataset<Cars> cars = getDataset().filter((FilterFunction<Cars>) car -> car.getOrigin().equals(origin))
-        .sort("Model");
+        .sort("me/asmai/project/Model");
         cars.show((int) getDataset().count());
     }
 

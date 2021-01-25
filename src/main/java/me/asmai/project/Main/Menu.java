@@ -1,11 +1,7 @@
-package Main;
+package me.asmai.project.Main;
 
-import Model.Cars;
-import org.apache.spark.api.java.function.FilterFunction;
-import org.apache.spark.sql.*;
-import service.CarsService;
+import me.asmai.project.service.CarsService;
 
-import static repository.EntryPoint.*;
 import java.util.Scanner;
 
 

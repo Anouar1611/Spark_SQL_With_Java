@@ -1,4 +1,4 @@
-package Model;
+package me.asmai.project.Model;
 
 public class Cars {
 
