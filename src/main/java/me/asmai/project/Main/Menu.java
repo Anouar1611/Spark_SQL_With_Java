@@ -51,7 +51,7 @@ public class Menu {
                         System.out.println("Enter the origin of the car : Ex: US");
                         scanner.nextLine();
                         origin = scanner.nextLine();
-                        carsService.getCarsByBetweenTwoModelsOfAnOriginAndSortedByHorsePower(model1,model2,origin);
+                        carsService.getCarsBetweenTwoModelsOfAnOriginAndSortedByHorsePower(model1,model2,origin);
                         break;
                     case 6:
                         System.out.println("Enter the origin of the car : Ex: Japan");
